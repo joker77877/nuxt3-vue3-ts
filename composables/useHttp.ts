@@ -5,47 +5,6 @@ export interface ResOptions<T> {
   code: number
   msg: string
 }
-
-// const handleError = <T>(response: FetchResponse<ResOptions<T>> & FetchResponse<ResponseType>) => {
-//   const err = (text: string) => {
-//     ElMessage.error(response?._data?.message ?? text)
-//   }
-//   if (!response._data) {
-//     err("请求超时，服务器无响应！")
-//     return
-//   }
-//   // const userStore = useUserStore()
-//   const handleMap: { [key: number]: () => void } = {
-//     404: () => err("服务器资源不存在"),
-//     500: () => err("服务器内部错误"),
-//     403: () => err("没有权限访问该资源"),
-//     401: () => {
-//       err("登录状态已过期，需要重新登录")
-//       // userStore.clearUserInfo()
-//       // TODO 跳转实际登录页
-//       navigateTo("/")
-//     }
-//   }
-//   if (handleMap[response.status]) {
-//     handleMap[response.status]()
-//   } else {
-//     err("未知错误！")
-//   }
-// }
-
-// const paramsSerializer = (params?: SearchParameters) => {
-//   if (!params) return false
-
-//   const query = cloneDeep(params)
-//   Object.entries(query).forEach(([key, val]) => {
-//     if (typeof val === "object" && Array.isArray(val) && val !== null) {
-//       query[`${key}[]`] = toRaw(val).map((v: any) => JSON.stringify(v))
-//       delete query[key]
-//     }
-//   })
-//   return query
-// }
-
 const fetch = $fetch.create({
   timeout: ResultEnum.TIMEOUT as number,
   baseURL: process.server && import.meta.dev ? BASE_URL : "/",

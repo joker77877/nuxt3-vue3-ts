@@ -50,24 +50,19 @@
       }">
       <el-config-provider :locale="zhCn">
         <div class="app-container">
-          <MitaHeader class="app-header" v-if="!isSimpleHeader"></MitaHeader>
           <div class="main-wrapper">
             <slot></slot>
           </div>
-          <MitaFooter v-if="!isHideFooter"></MitaFooter>
         </div>
-        <DialogLogin></DialogLogin>
+ 
       </el-config-provider>
     </a-config-provider>
   </a-extract-style>
 </template>
 <script setup lang="ts">
-import zhCn from "element-plus/es/locale/lang/zh-cn"
 import zhCN from "ant-design-vue/es/locale/zh_CN"
 
 const route = useRoute()
-const isSimpleHeader = computed(() => NO_HEADER_PAGES.some((e) => route.path.includes(e)))
-const isHideFooter = computed(() => NO_FOOTER_PAGES.some((e) => route.path.includes(e)))
 </script>
 <style lang="scss" scoped>
 .app-container {

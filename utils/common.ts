@@ -1,13 +1,4 @@
-export const moneyFormatter = (val: string) => val.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-export const moneyParser = (val: string) => val.replace(/\$\s?|(,*)/g, "")
-export const getNewObj = <T extends object, V>(obj: T, val: V) => {
-  let map = new Map<keyof T, V>()
-  Object.keys(obj).forEach((k) => {
-    const key = k as keyof T
-    map.set(key, val)
-  })
-  return map
-}
+
 /**
  * @description: 获取文件hash
  * @param {UploadRawFile} file
@@ -19,7 +10,6 @@ export const getFileHash = (file: UploadRawFile | File) => {
     worker.postMessage({ file, FILE_CHUNK_SIZE })
     worker.onmessage = (e: any) => {
       const { hash, chunks }: { hash: string; chunks: Blob[] } = e.data
-      uploadWorkStore.fileChunks = chunks
       if (hash) {
         resolve(hash)
       }
@@ -48,23 +38,4 @@ export const base64UrlToFile = (base64Url: string, filename: string) => {
     u8arr[n] = bstr.charCodeAt(n)
   }
   return new File([u8arr], filename, { type: mime })
-}
-/**
- * @description: 获取付款倒计时
- * @param {number} time
- * @return {string}
- */
-export function getPaymentCountdown(time: number) {
-  let diffTime = dayjs.duration(time).format("HH:mm:ss")
-  return diffTime
-}
-/**
- * @description: 提示错误
- * @param {string} msg
- * @return {*}
- */
-export const errorTip = (msg: string) => {
-  if (process.client) {
-    message.error(msg)
-  }
 }
