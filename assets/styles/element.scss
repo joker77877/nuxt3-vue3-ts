@@ -1,0 +1,135 @@
+.banner {
+  .el-carousel__arrow--left {
+    left: 60px;
+  }
+  .el-carousel__arrow--right {
+    right: 60px;
+  }
+  .el-carousel__arrow {
+    color: #f5f5f5;
+    background-color: rgb(71 71 71 / 30%);
+  }
+  .el-carousel {
+    &:hover {
+      .el-carousel__arrow {
+        color: var(--el-color-warning);
+      }
+    }
+    .el-carousel__button {
+      width: 4px;
+      height: 4px;
+      border-radius: 2px;
+    }
+  }
+}
+.search {
+  .el-input__wrapper {
+    background-color: #f6f8ff;
+    border-radius: 40px;
+  }
+}
+.form {
+  .el-form-item.is-error {
+    margin-bottom: 30px;
+  }
+  .el-form-item__error {
+    padding-top: 8px;
+  }
+  .el-button--info {
+    background-color: var(--el-bg-color-regular);
+  }
+  .el-button--primary {
+    background-color: var(--el-bg-color-primary);
+  }
+}
+.large-form {
+  .el-input-group {
+    height: 56px;
+    .el-select__wrapper {
+      height: 56px;
+    }
+  }
+  .el-input--large .el-input__wrapper {
+    box-sizing: border-box;
+    height: 56px;
+  }
+  .el-select__suffix .el-input__validateIcon {
+    display: none;
+  }
+}
+.agreement-tips {
+  font-size: var(--el-font-size-base);
+  font-weight: 400;
+  color: var(--el-color-black);
+}
+.loading-more {
+  width: 100%;
+  font-size: var(--el-font-size-base);
+  line-height: 40px;
+  color: var(--el-text-color-regular);
+  text-align: center;
+}
+.is-loading {
+  line-height: 40px;
+  text-align: center;
+}
+
+/* 重置input框中清空图标大小 */
+.el-input__suffix {
+  .el-input__suffix-inner {
+    border-color: none;
+    .el-icon.el-input__clear {
+      font-size: 20px;
+    }
+  }
+}
+
+@media only screen and (width <= 1560px) {
+  $screen-width: 900px;
+  .page-content {
+    width: $screen-width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .img-height-preference {
+    display: block;
+    width: 100%;
+    height: calc(($screen-width - 125px) / 8);
+  }
+}
+
+@media only screen and (width >= 1560px) {
+  $screen-width: 1200px;
+  .page-content {
+    width: $screen-width;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .img-height-preference {
+    display: block;
+    width: 100%;
+    height: calc(($screen-width - 125px) / 8);
+  }
+}
+.cart-popover {
+  padding: 0 !important;
+  background: #ffffff;
+  border: 1px solid #dadada;
+  border-radius: 10px;
+  box-shadow: 2px 7px 8.7px -1px #d2d2d2;
+}
+.delete-sure-popconfirm.el-popper {
+  padding: 40px 42px 35px;
+  font-size: var(--el-font-size-medium);
+  .el-popconfirm__main {
+    padding-bottom: 20px;
+  }
+}
+.app-container .el-checkbox {
+  font-weight: 400;
+}
+
+// message提示信息下移一点
+.el-message {
+  transform: translate3d(-50%, calc(40vh - 16px), 0);
+}

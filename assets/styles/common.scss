@@ -1,0 +1,251 @@
+@import "./var.scss";
+.primary-color {
+  color: $primary-color;
+}
+.danger-color {
+  color: $danger-color;
+}
+.success-color {
+  color: $success-color;
+}
+.info-color {
+  color: var(--el-color-info);
+}
+.title-2 {
+  font-size: var(--el-font-size-extra-large);
+  font-weight: 500;
+}
+.title-3 {
+  font-size: var(--el-font-size-medium);
+  font-weight: 500;
+}
+.sub-title {
+  color: $sub-title-color;
+}
+.ft24 {
+  font-size: 24px;
+}
+.ft20 {
+  font-size: 20px;
+}
+.ft18 {
+  font-size: 18px;
+}
+.ft16 {
+  font-size: 16px;
+}
+.ftw500 {
+  font-weight: 500;
+}
+.ftw600 {
+  font-weight: 600;
+}
+.bg-white {
+  background-color: #ffffff;
+}
+
+/* flex */
+.flx-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flx-justify-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flx-align-center {
+  display: flex;
+  align-items: center;
+}
+.flx-column {
+  flex-direction: column;
+}
+.flex-full {
+  flex: 1;
+}
+
+/* 显示手型 */
+.hover-pointer {
+  cursor: pointer;
+}
+
+/* clearfix */
+.clearfix::after {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+  content: "";
+}
+
+/* 文字首字母大写 */
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* 文字单行省略号 */
+.sle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 文字多行省略号 */
+.mle {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* 文字多了自动換行 */
+.break-word {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.2s;
+}
+.fade-transform-enter-from {
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translateX(-30px);
+}
+.fade-transform-leave-to {
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translateX(30px);
+}
+
+/* breadcrumb-transform */
+.breadcrumb-enter-active {
+  transition: all 0.2s;
+}
+.breadcrumb-enter-from,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+/* border */
+.border-btm {
+  border-bottom: 1px solid #ebebed;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--el-border-color-darker);
+  border-radius: 20px;
+}
+
+/* 外边距、内边距全局样式 */
+@for $i from 0 through 100 {
+  .mt#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mr#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mb#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ml#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  .pt#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pr#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pb#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pl#{$i} {
+    padding-left: #{$i}px !important;
+  }
+}
+
+// 资产列表响应式
+.model-asset-list {
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 30px;
+  align-items: stretch;
+
+  // 1920-2040
+  @media screen and (min-width: $screen-width-xlg) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  // ~-1200
+  @media screen and (max-width: $screen-width-s) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  // 1200-1559
+  @media screen and (min-width: $screen-width-s) and (max-width: $screen-width-lg) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  // 1560-1919
+  @media screen and (min-width: $screen-width-lg) and (max-width: $screen-width-xlg) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+// 列表页的最大最小宽度
+.flex-width-min-to-max {
+  min-width: $min-width;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+// 固定宽度
+.fixed-width {
+  min-width: $min-width;
+  max-width: $max-detail-width;
+  margin: 0 auto;
+}
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #232833;
+}
+
+// 为确保tailwind的rem尺寸统一，固定根字体大小
+html {
+  font-size: 16px;
+}
+
+// 1行的溢出省略（解决flex:1某种情况下的失效）
+.truncate-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 限量资产的渐变标签和文字
+.limit-tag-gradient {
+  background: linear-gradient(247.46deg, #ffedc2 -33.52%, #ffd4a7 -0.48%, #fe8d5a 94.88%, #fe6732 145.09%);
+}
+.limit-text-gradient {
+  color: transparent;
+  background: linear-gradient(73.53deg, #fe6732 -25.34%, #fe9361 22.2%, #ffcb9d 82.33%, #ffedc2 119.13%);
+  background-clip: text;
+}

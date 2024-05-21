@@ -1,0 +1,13 @@
+/dist/*
+.local
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+/public/*
+stats.html
+.history/*
+pnpm-lock.yaml
+auto-imports.d.ts
+components.d.ts

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-style: inherit;
+  }
+}
+
+@layer components {
+  .font-500-18 {
+    @apply text-lg font-medium leading-5.5 text-[#666];
+  }
+  .font-500-14 {
+    @apply text-sm font-medium leading-5.5 text-[#666];
+  }
+}

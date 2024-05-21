@@ -1,0 +1,57 @@
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (
+    "primary": (
+      "base": #115ee8
+    ),
+    "success": (
+      "base": #0cc399
+    ),
+    "warning": (
+      "base": #de951f
+    ),
+    "danger": (
+      "base": #e54850
+    ),
+    "info": (
+      "": #666666,
+      "light-3": #999999
+    )
+  ),
+  $text-color: (
+    "primary": #09090a,
+    "regular": #232833,
+    "secondary": #797979,
+    "placeholder": #abb7cc,
+    "disabled": #c0c4cc
+  ),
+  $bg-color: (
+    "regular": #a6a6a6,
+    "primary": #115ee8
+  ),
+  $font-size: (
+    "extra-large": 20px,
+    "large": 18px,
+    "medium": 16px,
+    "base": 14px,
+    "small": 13px,
+    "extra-small": 12px
+  ),
+  $border-color: (
+    "": #ebebed,
+    "light": #ebebed
+  ),
+  $input-font-size: (
+    "default": 12px
+  ),
+  $button-padding-vertical: (
+    "small": 14px
+  ),
+  $border-radius: (
+    "round": 14px
+  ),
+  // $button-hover-bg-color: (
+  //   "": #0e4bba
+  // )
+);
+
+// @use "element-plus/theme-chalk/src/index.scss" as *;

@@ -1,0 +1,16 @@
+/* global css variable */
+$primary-color: var(--el-color-primary);
+$danger-color: var(--el-color-danger);
+$success-color: var(--el-color-success);
+$sub-title-color: #999999;
+$bg-color-grey: #f5f5f5;
+$divided-color: #cccccc;
+
+/* 媒体查询屏幕宽度 */
+$screen-width-xlg: 1920px;
+$screen-width-lg: 1560px;
+$screen-width-med: 1399px;
+$screen-width-s: 1200px;
+$min-width: 1200px;
+$max-width: 2400px;
+$max-detail-width: 1512px;

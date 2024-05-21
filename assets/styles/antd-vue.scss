@@ -1,0 +1,11 @@
+.ant-select-disabled {
+  &.ant-select-multiple {
+    .ant-select-selection-item {
+      color: #ffffff;
+      background-color: rgb(17 94 232 / 50%);
+    }
+  }
+}
+.ant-select-multiple .ant-select-selector {
+  padding: 5px 12px;
+}
